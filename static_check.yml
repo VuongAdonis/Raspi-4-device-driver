@@ -1,0 +1,27 @@
+name: C/C++ Static Analysis
+
+on:
+  push:
+    paths:
+      - '**/**/*.c'
+      - '**/**/*.cpp'
+      - '**/**/*.h'
+  pull_request:
+    paths:
+      - '**/**/*.c'
+      - '**/**/*.cpp'
+      - '**/**/*.h'
+      
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        used: actions/checkout@v3
+
+      - name: Install cppcheck
+        run: sudo apt-get update && sudo apt-get install -y cppcheck
+
+      - name: Run cppcheck static analysis
+        run: cppcheck --enable=all --inconclusive --std=c11 --std=c++11 --quite ./src/
+      
