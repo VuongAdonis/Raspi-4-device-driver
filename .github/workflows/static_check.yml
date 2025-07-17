@@ -23,6 +23,6 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y cppcheck
 
       - name: Run cppcheck static analysis
-        run: cppcheck --enable=all --inconclusive --std=c11 --quiet ./src/
+        run: cppcheck --enable=all --inconclusive --std=c11 --quiet . --suppress=missingIncludeSystem
 
       
