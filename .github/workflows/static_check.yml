@@ -23,6 +23,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y cppcheck
 
       - name: Run cppcheck static analysis
-        run: cppcheck --enable=all --inconclusive --std=c11 --quiet . --suppress=missingIncludeSystem
+        run: cppcheck --enable=all --inconclusive --std=c11 . --suppress=missingIncludeSystem --output-file=cppcheck-report.xml --xml
 
-      
+      - name: Upload cppcheck report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cppcheck-report
+          path: cppcheck-report.xml
