@@ -147,7 +147,7 @@ static void __exit simple_exit(void)
     cdev_del(&simple_cdev);
     class_destroy(simple_class);
     unregister_chrdev_region(dev_number, 1);
-    printk(KERN_INFO "simplechardev: Module unloaded!\n");
+    printk(KERN_INFO "simplechardev: Module unloaded success!\n");
 }
 
 module_init(simple_init);
