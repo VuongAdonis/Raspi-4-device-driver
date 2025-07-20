@@ -22,10 +22,16 @@
 
 - `Enter target directory for SDK (default: /opt/poky/5.2.1):`
 
-4. Go to the folder you setup toolchain
+4. If this is the first time you build, prepare for the source SDK:
 
-5. Source the environment for sdk
+- `<Path in the previous step>/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/src/kernel`
+- `$ make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- prepare`
+- `$ make ARCH=arm CROSS_COMPILE=arm-poky-linux-gnueabi- scripts`
+
+5. Go to the folder you setup toolchain
+
+6. Source the environment for sdk
 
 - `$ source environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi` 
 
-6. Then build your application with the cross-compiler environment active.
+7. Then build your application with the cross-compiler environment active.

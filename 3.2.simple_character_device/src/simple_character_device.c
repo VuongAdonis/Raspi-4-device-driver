@@ -5,7 +5,7 @@
 #include <linux/device.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Vuong");
+MODULE_AUTHOR("Adonis<vuong03062003@gmail.com>");
 MODULE_DESCRIPTION("Simple character device driver!");
 
 #define DEVICE_NAME "simplechardev"
