@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-static int __ini hello_init(void) {
+static int __init hello_init(void) {
     printk(KERN_INFO "Helloworld! Simple Device Driver loaded.\n");
     return 0;
 }
