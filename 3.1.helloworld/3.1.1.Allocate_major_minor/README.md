@@ -77,4 +77,3 @@ register_chrdev_region(dev, 1, "Embedtronicx_Dev");
 
 3.1. Using `unregister_chrdev_regionn(dev_t first, unsigned int count);`
 
-

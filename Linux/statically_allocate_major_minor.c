@@ -15,7 +15,7 @@ static int __init init_static_alloc(void)
         printk(KERN_INFO "MAJOR number = %d, MINOR number = %d \n", MAJOR(dev), MINOR(dev));
     }
     else {
-        unregister_chrdev_region(dev, 1);
+        printk(KERN_INFO "Statically allocate failed! \n");
     }
     return 0;
 }
