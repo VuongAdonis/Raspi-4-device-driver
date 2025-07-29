@@ -60,6 +60,16 @@ static int __init file_ops_init(void)
     }
     printk(KERN_INFO "Allocate successfully with major = %d, minor = %d \n", MAJOR(dev), MINOR(dev));
 
+    // Creating cdev structure
+    cdev_init(&file_ops_cdev, &fops);
+
+    // Adding character device to the system
+    if((cdev_add(&file_ops_cdev, dev, 1)) < 0)
+    {
+        pr_err("Cannot add the device to the system! \n");
+        goto err_class;
+    }
+
     class_file_ops = class_create("file_ops_class");
     if(IS_ERR(class_file_ops))
     {
@@ -89,6 +99,7 @@ static void __exit file_ops_exit(void)
 {
     device_destroy(class_file_ops, dev);
     class_destroy(class_file_ops);
+    cdev_del(&file_ops_cdev);
     unregister_chrdev_region(dev, 1);
     printk(KERN_INFO "Unload module for file operations successfully! \n");
 }
