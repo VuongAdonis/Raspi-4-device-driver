@@ -1,6 +1,12 @@
 {
     "files.associations": {
         "fs.h": "c",
-        "device.h": "c"
+        "device.h": "c",
+        "expected": "c",
+        "memory": "c",
+        "memory_resource": "c",
+        "semaphore": "c",
+        "shared_mutex": "c",
+        "stop_token": "c"
     }
 }

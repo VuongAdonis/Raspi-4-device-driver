@@ -16,7 +16,7 @@ static struct cdev file_ops_cdev;
 static int      etx_open(struct inode *inode, struct file *file);
 static int      etx_release(struct inode *inode, struct file *file);
 static ssize_t  etx_read(struct file *file, char __user *buf, size_t len, loff_t *off);
-static ssize_t  etx_write(struct file *file, const char *buf, size_t len, loff_t *off);
+static ssize_t  etx_write(struct file *file, const char __user *buf, size_t len, loff_t *off);
 
 static struct file_operations fops = 
 {
