@@ -82,7 +82,7 @@ static int __init real_device_init(void)
     }
     printk(KERN_INFO "Add character device successfully!\n");
 
-    class_real_device = class_create("class_real_device");
+    class_real_device = class_create("class_real_device_class");
     if(IS_ERR(class_real_device))
     {
         pr_err("Cannot create class!\n");
@@ -90,7 +90,7 @@ static int __init real_device_init(void)
     }
     printk(KERN_INFO "Create class successfully! \n");
 
-    if(IS_ERR(device_create(class_real_device, NULL, dev, NULL, "device_real")))
+    if(IS_ERR(device_create(class_real_device, NULL, dev, NULL, "real_device")))
     {
         pr_err("Cannot create device!\n");
         goto err_device;
