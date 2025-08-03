@@ -53,7 +53,7 @@ static ssize_t etx_write(struct file *file, const char *buf, size_t len, loff_t 
 
 static ssize_t etx_read(struct file *file, char __user *buf, size_t len, loff_t *off)
 {
-    copy_to_user(kernel_buffer, buf, mem_size);
+    copy_to_user(buf, kernel_buffer, mem_size);
     printk(KERN_INFO "Data read: Done...!\n");
     return mem_size;
 }
