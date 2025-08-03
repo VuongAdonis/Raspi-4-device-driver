@@ -7,6 +7,8 @@
         "memory_resource": "c",
         "semaphore": "c",
         "shared_mutex": "c",
-        "stop_token": "c"
+        "stop_token": "c",
+        "fcntl.h": "c",
+        "unistd.h": "c"
     }
 }

@@ -1,7 +1,8 @@
 .PHONY: all clean
 
-all: 
-	gcc -o userspace_app userspace_test_fops.c
+# Default target just builds the given OBJ file
+all:
+	gcc -o $(basename $(OBJ)) $(OBJ)
 
 clean:
-	rm userspace_app
+	rm -f $(basename $(OBJ))

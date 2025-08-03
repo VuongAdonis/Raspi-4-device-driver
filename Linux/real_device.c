@@ -10,7 +10,7 @@
 #include <linux/slab.h>     // kmalloc
 
 
-#define mem_size 1004
+#define mem_size 1024
 
 dev_t dev = 0;
 struct class *class_real_device;
