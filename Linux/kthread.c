@@ -241,8 +241,7 @@ static int __init module_driver_init(void)
     {
         wake_up_process(etx_thread);
     }
-    else
-    {
+    else {
         pr_err("Cannot create kthread! \n");
         goto err_kthread;
     }
